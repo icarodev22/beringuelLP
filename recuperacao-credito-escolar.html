@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Recuperação de Crédito Escolar | Beringuel Advocacia</title>
+<meta name="description" content="Reduza a inadimplência da sua escola com advogados especialistas em Direito Educacional e o método RCI. Beringuel Advocacia, Olinda-PE." />
+<meta property="og:title" content="Recuperação de Crédito Escolar | Beringuel Advocacia" />
+<meta property="og:description" content="Método RCI: prevenção da inadimplência e cobrança especializada para escolas." />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+<style>
+  :root{
+    /* Paleta oficial do escritório */
+    --ink:#18070A;
+    --wine:#8D2245;
+    --brown:#61381B;
+    --gold:#F5D79E;
+
+    --wine-deep:var(--ink);
+    --wine-foreground:#FDF6EA;
+    --gold-deep:var(--brown);
+    --gold-foreground:var(--ink);
+    --cream:#FDF6EA;
+
+    --background:#FDF6EA;
+    --foreground:var(--ink);
+    --card:color-mix(in srgb, var(--gold) 6%, #ffffff);
+    --primary:var(--ink);
+    --primary-foreground:#FDF6EA;
+    --secondary:color-mix(in srgb, var(--gold) 35%, var(--background));
+    --muted-foreground:color-mix(in srgb, var(--brown) 78%, var(--ink));
+    --border:color-mix(in srgb, var(--gold) 55%, var(--background));
+
+    --gradient-wine: linear-gradient(155deg, var(--ink) 0%, var(--wine) 190%);
+    --gradient-gold: linear-gradient(100deg, var(--brown), var(--gold) 55%, var(--brown));
+    --shadow-elegant: 0 24px 60px -28px color-mix(in oklab, var(--ink) 55%, transparent);
+    --shadow-gold: 0 12px 34px -14px color-mix(in oklab, var(--gold) 55%, transparent);
+    --dots: radial-gradient(color-mix(in oklab, var(--gold) 45%, transparent) 1px, transparent 1px);
+
+    --font-display: "Space Grotesk", "Manrope", system-ui, sans-serif;
+    --font-sans: "Manrope", system-ui, sans-serif;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background-color:var(--background);
+    color:var(--foreground);
+    font-family:var(--font-sans);
+    font-size:1.0625rem;
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{
+    font-family:var(--font-display);
+    font-weight:600;
+    letter-spacing:-0.022em;
+  }
+  a{color:inherit;text-decoration:none;}
+  img,svg{display:block;}
+  .icon{width:1em;height:1em;stroke-width:1.5;}
+  .container{max-width:72rem;margin:0 auto;padding-left:1.25rem;padding-right:1.25rem;}
+
+  .surface-wine{background-image:var(--gradient-wine);color:var(--wine-foreground);}
+  .text-gold-gradient{
+    background-image:linear-gradient(100deg, var(--gold), color-mix(in srgb, var(--gold) 62%, var(--brown)));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .eyebrow{
+    font-family:var(--font-sans);
+    font-size:0.6875rem;font-weight:500;text-transform:uppercase;
+    letter-spacing:0.36em;color:var(--gold-deep);
+  }
+  .eyebrow.gold{color:var(--gold);}
+  .dotted-corner{background-image:var(--dots);background-size:12px 12px;}
+  .hairline-gold{background-image:var(--gradient-gold);height:1px;width:100%;border:0;display:block;}
+  .shadow-elegant{box-shadow:var(--shadow-elegant);}
+  .shadow-gold-s{box-shadow:var(--shadow-gold);}
+
+  /* buttons */
+  .btn-wa{
+    display:inline-flex;align-items:center;justify-content:center;gap:0.5rem;
+    border-radius:9999px;padding:0.75rem 1.5rem;font-size:0.875rem;font-weight:600;
+    letter-spacing:0.02em;transition:all .3s ease;
+  }
+  .btn-wa:hover{transform:translateY(-2px);}
+  .btn-wa.gold{background:var(--gold);color:var(--gold-foreground);}
+  .btn-wa.gold:hover{box-shadow:var(--shadow-gold);}
+  .btn-wa.outline{border:1px solid color-mix(in oklab, var(--gold) 60%, transparent);color:var(--gold);}
+  .btn-wa.outline:hover{background:color-mix(in oklab, var(--gold) 10%, transparent);}
+  .btn-wa.wine{background:var(--wine);color:var(--cream);}
+  .btn-wa.wine:hover{box-shadow:0 12px 30px -14px color-mix(in oklab, var(--wine) 70%, transparent);}
+
+  /* header */
+  header{
+    position:fixed;inset:0 0 auto 0;z-index:50;
+    border-bottom:1px solid transparent;background:transparent;
+    transition:all .5s ease;
+  }
+  header.scrolled{
+    border-bottom:1px solid color-mix(in oklab, var(--gold) 20%, transparent);
+    background:color-mix(in oklab, var(--ink) 88%, transparent);
+    backdrop-filter:blur(12px);
+  }
+  .header-inner{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;padding-top:0.55rem;padding-bottom:0.55rem;}
+  .brand{display:flex;align-items:center;}
+  .brand img{height:3.6rem;width:auto;display:block;}
+  @media(min-width:640px){.brand img{height:4.5rem;}}
+  nav.desktop-nav{display:none;align-items:center;gap:1.5rem;}
+  nav.desktop-nav a, .wa-header-btn{white-space:nowrap;}
+  @media(min-width:1200px){nav.desktop-nav{gap:2rem;}}
+  nav.desktop-nav a{font-size:0.875rem;font-weight:600;color:var(--cream);text-shadow:0 1px 10px rgba(24,7,10,.65);transition:color .2s;}
+  nav.desktop-nav a:hover{color:var(--gold);}
+  .header-actions{display:flex;align-items:center;gap:0.75rem;}
+  .wa-header-btn{display:none;}
+  .menu-btn{
+    display:inline-flex;align-items:center;justify-content:center;
+    width:2.5rem;height:2.5rem;border-radius:0.5rem;background:transparent;border:0;
+    color:var(--cream);cursor:pointer;
+  }
+  .menu-btn:hover{background:color-mix(in oklab, var(--cream) 10%, transparent);}
+  .menu-lines{display:flex;flex-direction:column;gap:0.35rem;}
+  .menu-lines span{display:block;height:1px;background:currentColor;width:1.25rem;}
+  .menu-lines span:last-child{width:0.75rem;}
+  .mobile-nav{
+    display:none;border-top:1px solid color-mix(in oklab, var(--gold) 20%, transparent);
+    background:var(--ink);padding:0.5rem 1.25rem 1.5rem;
+  }
+  .mobile-nav.open{display:block;}
+  .mobile-nav a{
+    display:block;border-bottom:1px solid color-mix(in oklab, var(--cream) 10%, transparent);
+    padding:0.75rem 0;font-size:0.875rem;color:color-mix(in oklab, var(--cream) 80%, transparent);
+  }
+  .mobile-nav .btn-wa{margin-top:1.25rem;width:100%;}
+
+  @media(min-width:1200px){
+    nav.desktop-nav{display:flex;}
+    .mobile-nav{display:none !important;}
+    .menu-btn{display:none;}
+  }
+  @media(min-width:640px){
+    .wa-header-btn{display:inline-flex;padding:0.625rem 1.25rem;}
+  }
+
+  /* hero */
+  #top{position:relative;overflow:hidden;}
+  .hero-inner{position:relative;padding-top:9rem;padding-bottom:5rem;}
+  @media(min-width:640px){.hero-inner{padding-top:11rem;}}
+  .hero-monogram{position:absolute;right:-2.5rem;top:4rem;height:34rem;width:auto;opacity:0.08;pointer-events:none;}
+  @media(min-width:640px){.hero-monogram{right:1rem;}}
+  .hero h1{font-size:2.25rem;line-height:1.1;color:var(--cream);max-width:32ch;margin-top:1.5rem;}
+  @media(min-width:640px){.hero h1{font-size:3rem;}}
+  @media(min-width:768px){.hero h1{font-size:3.4rem;}}
+  .hero p.lead{margin-top:1.75rem;max-width:58ch;font-size:1rem;line-height:1.85;color:color-mix(in oklab, var(--cream) 80%, transparent);}
+  @media(min-width:640px){.hero p.lead{font-size:1.125rem;}}
+  .hero-cta{margin-top:2.25rem;display:flex;flex-wrap:wrap;align-items:center;gap:1rem;}
+  .hero-cta .link{font-size:0.875rem;color:color-mix(in oklab, var(--cream) 70%, transparent);text-underline-offset:8px;transition:color .2s;}
+  .hero-cta .link:hover{color:var(--gold);text-decoration:underline;}
+  .stats{
+    margin-top:4rem;display:grid;gap:1px;border-radius:0.75rem;overflow:hidden;
+    border:1px solid color-mix(in oklab, var(--gold) 25%, transparent);
+    background:color-mix(in oklab, var(--gold) 20%, transparent);
+  }
+  @media(min-width:640px){.stats{grid-template-columns:repeat(3,1fr);}}
+  .stat{background:color-mix(in oklab, var(--wine-deep) 80%, transparent);padding:2rem 1.5rem;text-align:center;}
+  .stat .val{font-family:var(--font-display);font-size:2.25rem;color:var(--gold);}
+  @media(min-width:640px){.stat .val{font-size:3rem;}}
+  .stat .lbl{margin-top:0.75rem;font-size:0.75rem;text-transform:uppercase;letter-spacing:0.2em;color:color-mix(in oklab, var(--cream) 60%, transparent);}
+
+  /* sections general */
+  section{padding:6rem 0;}
+  .section-title{max-width:42rem;}
+  .section-title h2{font-size:1.875rem;line-height:1.2;margin-top:1rem;color:var(--wine);}
+  @media(min-width:640px){.section-title h2{font-size:2.25rem;}}
+  @media(min-width:768px){.section-title h2{font-size:3rem;}}
+  .section-title.light h2{color:var(--cream);}
+  .section-title .rule{margin-top:1.5rem;max-width:6rem;}
+  .section-title p.desc{margin-top:1.5rem;font-size:1rem;line-height:1.7;color:var(--muted-foreground);}
+  .section-title.light p.desc{color:color-mix(in oklab, var(--cream) 70%, transparent);}
+
+  /* about */
+  .about-grid{display:grid;gap:3.5rem;align-items:center;}
+  @media(min-width:1024px){.about-grid{grid-template-columns:1.1fr 0.9fr;}}
+  .about-text{margin-top:2rem;max-width:62ch;font-size:1.0625rem;line-height:1.85;color:var(--muted-foreground);}
+  .about-text p{margin-top:1.5rem;}
+  .about-text p:first-child{margin-top:0;}
+  .about-link{margin-top:2.25rem;display:inline-flex;align-items:center;gap:0.75rem;font-size:0.875rem;font-weight:600;color:var(--primary);transition:color .2s;}
+  .about-link:hover{color:var(--wine);}
+  .about-link .hairline-gold{width:2.5rem;}
+  .about-card{position:relative;overflow:hidden;border-radius:1rem;padding:3.5rem 2rem;text-align:center;min-height:22rem;display:flex;flex-direction:column;justify-content:flex-end;}
+  .about-card-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+  .about-card-overlay{position:absolute;inset:0;background:linear-gradient(0deg, color-mix(in oklab, var(--wine-deep) 88%, transparent) 10%, color-mix(in oklab, var(--wine-deep) 20%, transparent) 70%);}
+  .about-card blockquote{position:relative;z-index:1;font-family:var(--font-display);font-size:1.5rem;line-height:1.3;color:var(--cream);}
+  .about-card .credit{position:relative;z-index:1;margin-top:1rem;font-size:0.7rem;text-transform:uppercase;letter-spacing:0.28em;color:color-mix(in oklab, var(--gold) 80%, transparent);}
+
+  /* specialties */
+  .grid-2{margin:3.5rem auto 0;display:grid;gap:1.5rem;justify-content:center;grid-template-columns:minmax(0,1fr);max-width:26rem;}
+  @media(min-width:768px){.grid-2{grid-template-columns:repeat(2,minmax(0,24rem));max-width:none;}}
+  .grid-3{margin-top:3.5rem;display:grid;gap:1.5rem;}
+  @media(min-width:768px){.grid-3{grid-template-columns:repeat(3,1fr);}}
+  .card{
+    height:100%;border-radius:1rem;border:1px solid var(--border);background:var(--card);
+    padding:2rem;transition:all .3s ease;
+  }
+  .card:hover{transform:translateY(-6px);border-color:color-mix(in oklab, var(--gold) 60%, transparent);box-shadow:var(--shadow-elegant);}
+  .card .icn{color:var(--gold-deep);}
+  .card h3{margin-top:1.75rem;font-size:1.25rem;line-height:1.3;color:var(--primary);}
+  .card .rule{margin-top:1.25rem;width:2.5rem;opacity:.7;}
+  .card p{margin-top:1.25rem;font-size:0.875rem;line-height:1.7;color:var(--muted-foreground);}
+
+  /* educacional */
+  .educ-grid{display:grid;gap:3rem;align-items:center;}
+  @media(min-width:1024px){.educ-grid{grid-template-columns:1fr 1fr;}}
+  .educ-img{width:100%;height:auto;border-radius:1rem;display:block;}
+
+  /* history */
+  #historia{position:relative;overflow:hidden;}
+  .history-grid{margin-top:4rem;display:grid;gap:2.5rem;}
+  @media(min-width:1024px){.history-grid{grid-template-columns:0.9fr 1.1fr;}}
+  .history-box{border-radius:1rem;border:1px solid color-mix(in oklab, var(--gold) 25%, transparent);background:color-mix(in oklab, var(--cream) 5%, transparent);padding:2rem;}
+  .history-box .big{margin-top:1rem;font-family:var(--font-display);font-size:3.75rem;color:var(--gold);}
+  .history-box p{margin-top:1rem;font-size:0.875rem;line-height:1.85;color:color-mix(in oklab, var(--cream) 75%, transparent);}
+  .history-box .btn-wa{margin-top:2rem;width:100%;}
+  .timeline{position:relative;list-style:none;border-left:1px solid color-mix(in oklab, var(--gold) 30%, transparent);padding-left:2rem;display:flex;flex-direction:column;gap:2rem;}
+  .timeline li{position:relative;}
+  .timeline li::before{
+    content:"";position:absolute;left:-2.3rem;top:0.35rem;width:0.625rem;height:0.625rem;
+    border-radius:9999px;background:var(--gold);
+  }
+  .timeline h3{margin-top:0.75rem;font-size:1.25rem;color:var(--cream);}
+  .timeline p{margin-top:0.5rem;font-size:0.875rem;line-height:1.6;color:color-mix(in oklab, var(--cream) 70%, transparent);}
+
+  /* credentials */
+  .grid-4{margin-top:3.5rem;display:grid;gap:1.25rem;}
+  @media(min-width:640px){.grid-4{grid-template-columns:repeat(2,1fr);}}
+  @media(min-width:1024px){.grid-4{grid-template-columns:repeat(4,1fr);}}
+  .cred{
+    height:100%;display:flex;flex-direction:column;align-items:center;text-align:center;
+    border-radius:1rem;border:1px solid color-mix(in oklab, var(--gold) 30%, transparent);
+    background:var(--card);padding:2.25rem 1.5rem;transition:all .3s ease;
+  }
+  .cred:hover{transform:translateY(-4px);box-shadow:var(--shadow-gold);}
+  .cred .ring{
+    display:flex;align-items:center;justify-content:center;width:3.5rem;height:3.5rem;
+    border-radius:9999px;border:1px solid color-mix(in oklab, var(--gold) 50%, transparent);
+  }
+  .cred .ring svg{color:var(--gold-deep);}
+  .cred .lbl{margin-top:1.25rem;font-size:0.875rem;font-weight:600;text-transform:uppercase;letter-spacing:0.16em;color:var(--primary);}
+  .cred .dtl{margin-top:0.5rem;font-size:0.75rem;color:var(--muted-foreground);}
+
+  /* informacoes */
+  .info-card{
+    display:flex;flex-direction:column;height:100%;overflow:hidden;border-radius:1rem;
+    border:1px solid var(--border);background:var(--card);transition:all .3s ease;
+  }
+  .info-card:hover{transform:translateY(-6px);border-color:color-mix(in oklab, var(--gold) 60%, transparent);box-shadow:var(--shadow-elegant);}
+  .info-thumb{
+    aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;overflow:hidden;
+    border-bottom:1px solid var(--border);background:color-mix(in oklab, var(--secondary) 50%, transparent);
+  }
+  .info-thumb svg{color:var(--gold-deep);width:2.5rem;height:2.5rem;}
+  .info-thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease;}
+  .info-card:hover .info-thumb img{transform:scale(1.05);}
+  .info-thumb.video-thumb{background:var(--ink);}
+  .info-thumb.video-thumb video{width:100%;height:100%;object-fit:cover;display:block;}
+  .info-body{flex:1;padding:1.75rem;}
+  .info-body h3{margin-top:1rem;font-size:1.25rem;color:var(--primary);}
+  .info-body p{margin-top:1rem;max-width:46ch;font-size:0.95rem;line-height:1.8;color:var(--muted-foreground);}
+
+  /* faq */
+  .faq-grid{display:grid;gap:3rem;}
+  @media(min-width:1024px){.faq-grid{grid-template-columns:0.8fr 1.2fr;}}
+  .accordion-item{border-bottom:1px solid var(--border);}
+  .accordion-trigger{
+    width:100%;text-align:left;background:none;border:0;cursor:pointer;
+    display:flex;align-items:center;justify-content:space-between;gap:1rem;
+    padding:1.25rem 0;font-family:var(--font-display);font-size:1.125rem;color:var(--primary);
+  }
+  .accordion-trigger .chev{transition:transform .25s ease;flex-shrink:0;color:var(--gold-deep);}
+  .accordion-item.open .accordion-trigger .chev{transform:rotate(180deg);}
+  .accordion-content{max-height:0;overflow:hidden;transition:max-height .3s ease;}
+  .accordion-content .inner{padding-bottom:1.25rem;font-size:0.875rem;line-height:1.7;color:var(--muted-foreground);}
+
+  /* footer */
+  footer{position:relative;overflow:hidden;padding-top:6rem;}
+  .footer-grid{display:grid;gap:3.5rem;}
+  @media(min-width:1024px){.footer-grid{grid-template-columns:1fr 1fr;}}
+  .footer-cta{margin-top:2.25rem;width:100%;padding:1rem 2rem;font-size:1rem;}
+  @media(min-width:640px){.footer-cta{width:auto;}}
+  .addr-grid{margin-top:2.5rem;display:grid;gap:1.5rem;}
+  @media(min-width:640px){.addr-grid{grid-template-columns:1fr 1.1fr;align-items:center;}}
+  .addr{display:flex;gap:1rem;}
+  .addr strong{display:block;font-weight:600;color:var(--cream);}
+  .addr span, .addr div{font-size:0.875rem;line-height:1.85;color:color-mix(in oklab, var(--cream) 80%, transparent);}
+  .map-wrap{overflow:hidden;border-radius:1rem;border:1px solid color-mix(in oklab, var(--gold) 25%, transparent);}
+  .map-wrap iframe{height:12rem;width:100%;border:0;display:block;}
+  .contact-list{list-style:none;display:flex;flex-direction:column;gap:1.5rem;}
+  @media(min-width:1024px){.contact-list{padding-top:2.5rem;}}
+  .contact-list li{display:flex;gap:1rem;align-items:flex-start;}
+  .contact-list a, .contact-list span{font-size:0.875rem;line-height:1.85;color:color-mix(in oklab, var(--cream) 75%, transparent);}
+  .contact-list a:hover{color:var(--gold);}
+  .footer-bottom{
+    margin-top:5rem;display:flex;flex-direction:column;align-items:center;gap:1rem;
+    border-top:1px solid color-mix(in oklab, var(--cream) 10%, transparent);padding:2rem 0;text-align:center;
+  }
+  @media(min-width:640px){.footer-bottom{flex-direction:row;justify-content:space-between;text-align:left;}}
+  .footer-bottom p{font-size:0.75rem;color:color-mix(in oklab, var(--cream) 50%, transparent);}
+  .footer-bottom .brand-tag{letter-spacing:0.2em;}
+  .footer-bottom .brand-tag span{color:var(--gold);}
+  .footer-mono{position:absolute;left:-4rem;bottom:0;height:24rem;width:auto;opacity:0.06;pointer-events:none;}
+  .locale-photo{margin-top:1.5rem;overflow:hidden;border-radius:1rem;border:1px solid color-mix(in oklab, var(--gold) 25%, transparent);}
+  .locale-photo img{width:100%;height:14rem;object-fit:cover;display:block;}
+  .negotiate-box{
+    margin-top:2.5rem;border-radius:1rem;border:1px solid color-mix(in oklab, var(--gold) 25%, transparent);
+    background:color-mix(in oklab, var(--cream) 5%, transparent);padding:1.75rem;
+  }
+  .negotiate-box h4{font-family:var(--font-display);font-size:1.0625rem;color:var(--cream);}
+  .negotiate-box .note{margin-top:0.6rem;font-size:0.8125rem;line-height:1.65;color:color-mix(in oklab, var(--cream) 70%, transparent);}
+  .negotiate-box .note strong{color:var(--gold);font-weight:600;}
+  .negotiate-box .lines{margin-top:1rem;display:flex;flex-direction:column;gap:0.5rem;}
+  .negotiate-box .lines a{font-size:0.875rem;color:color-mix(in oklab, var(--cream) 85%, transparent);display:inline-flex;align-items:center;gap:0.5rem;}
+  .negotiate-box .lines a:hover{color:var(--gold);}
+
+  /* floating whatsapp */
+  .floating-wa{
+    position:fixed;bottom:1.25rem;right:1.25rem;z-index:50;display:flex;align-items:center;gap:0.75rem;
+    border-radius:9999px;background:var(--wine-deep);padding:0.875rem 1rem;color:var(--gold);
+    box-shadow:0 0 0 1px color-mix(in oklab, var(--gold) 50%, transparent);
+    transition:transform .3s ease;animation:pulse-gold 3.2s ease-in-out infinite;
+  }
+  .floating-wa:hover{transform:scale(1.05);}
+  .floating-wa span{display:none;font-size:0.875rem;font-weight:600;}
+  @media(min-width:640px){.floating-wa span{display:inline;}}
+  @keyframes pulse-gold{
+    0%,70%,100%{box-shadow:0 0 0 0 color-mix(in oklab, var(--gold) 45%, transparent);}
+    35%{box-shadow:0 0 0 14px color-mix(in oklab, var(--gold) 0%, transparent);}
+  }
+
+  /* reveal on scroll */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1);}
+  .reveal.is-visible{opacity:1;transform:none;}
+  @media (prefers-reduced-motion: reduce){.reveal{opacity:1;transform:none;transition:none;}}
+
+
+  /* ===== sub site: recuperação de crédito escolar ===== */
+  .stat .val.sm{font-size:1.5rem;line-height:1.25;}
+  @media(min-width:640px){.stat .val.sm{font-size:1.875rem;}}
+  .sobre-quote{margin-top:2rem;font-family:var(--font-display);font-size:1.5rem;line-height:1.3;color:var(--wine);}
+  .sol-card{height:100%;border-radius:1rem;border:1px solid var(--border);background:var(--card);padding:1.75rem;transition:all .3s ease;}
+  .sol-card:hover{transform:translateY(-6px);border-color:color-mix(in oklab, var(--gold) 60%, transparent);box-shadow:var(--shadow-elegant);}
+  .sol-card .num{font-family:var(--font-display);font-size:2rem;line-height:1;color:var(--brown);}
+  .sol-card .rule{margin-top:1rem;width:2.5rem;opacity:.7;}
+  .sol-card p{margin-top:1rem;font-size:0.95rem;line-height:1.7;color:var(--foreground);}
+  .cta-band{position:relative;overflow:hidden;border-radius:1.25rem;padding:3rem 1.75rem;text-align:center;}
+  @media(min-width:768px){.cta-band{padding:3.5rem 3rem;}}
+  .cta-band h3{font-size:1.625rem;line-height:1.25;color:var(--cream);max-width:34ch;margin:0 auto;}
+  @media(min-width:768px){.cta-band h3{font-size:2rem;}}
+  .cta-band p{margin:1rem auto 0;max-width:52ch;font-size:1rem;line-height:1.75;color:color-mix(in oklab, var(--cream) 78%, transparent);}
+  .cta-band .btn-wa{margin-top:1.75rem;padding:0.95rem 1.9rem;font-size:0.95rem;}
+  .check-grid{margin-top:3.5rem;display:grid;gap:1rem;}
+  @media(min-width:768px){.check-grid{grid-template-columns:repeat(2,1fr);gap:1.25rem;}}
+  .check-grid > .reveal{display:flex;}
+  .check-item{flex:1;display:flex;align-items:flex-start;gap:1rem;border-radius:0.875rem;border:1px solid color-mix(in oklab, var(--gold) 25%, transparent);background:color-mix(in oklab, var(--cream) 5%, transparent);padding:1.25rem 1.5rem;}
+  .check-item .tick{flex-shrink:0;display:flex;align-items:center;justify-content:center;width:2rem;height:2rem;border-radius:9999px;background:var(--gold);color:var(--ink);}
+  .check-item .tick svg{width:1rem;height:1rem;}
+  .check-item p{font-size:1rem;line-height:1.6;color:var(--cream);}
+  .reviews{margin-top:3.5rem;columns:1;column-gap:1.5rem;}
+  @media(min-width:768px){.reviews{columns:2;}}
+  @media(min-width:1024px){.reviews{columns:3;}}
+  .review{break-inside:avoid;margin-bottom:1.5rem;border-radius:1rem;border:1px solid var(--border);background:var(--card);padding:1.5rem;}
+  .review .who{display:flex;align-items:center;gap:0.75rem;}
+  .review .avatar{flex-shrink:0;display:flex;align-items:center;justify-content:center;width:2.5rem;height:2.5rem;border-radius:9999px;background:var(--wine);color:var(--cream);font-family:var(--font-display);font-weight:600;}
+  .review .nm{font-weight:700;font-size:0.9375rem;line-height:1.3;color:var(--ink);}
+  .review .dt{font-size:0.75rem;color:var(--muted-foreground);}
+  .review blockquote{margin-top:1rem;font-size:0.9375rem;line-height:1.7;color:var(--foreground);}
+  .reviews-note{margin-top:2rem;text-align:center;font-size:0.8125rem;color:var(--muted-foreground);}
+
+
+  /* v2: compact lists + google carousel */
+  .compact{padding:3.75rem 0;}
+  .compact .section-title h2{font-size:1.625rem;}
+  @media(min-width:768px){.compact .section-title h2{font-size:2.125rem;}}
+  .compact .section-title .rule{margin-top:1rem;}
+  .mini-list{list-style:none;margin-top:1.75rem;display:grid;column-gap:2.5rem;}
+  @media(min-width:768px){.mini-list{grid-template-columns:repeat(2,1fr);}}
+  .mini-list li{display:flex;align-items:flex-start;gap:0.75rem;padding:0.7rem 0;border-bottom:1px solid var(--border);font-size:0.9375rem;line-height:1.5;color:var(--foreground);}
+  .mini-list .n{flex-shrink:0;min-width:1.5rem;padding-top:0.1rem;font-family:var(--font-display);font-size:0.8125rem;font-weight:600;color:var(--brown);}
+  .mini-list .tk{flex-shrink:0;display:flex;align-items:center;justify-content:center;width:1.25rem;height:1.25rem;margin-top:0.12rem;border-radius:9999px;background:var(--gold);color:var(--ink);}
+  .mini-list .tk svg{width:0.7rem;height:0.7rem;}
+  .mini-list.dark li{border-bottom-color:color-mix(in oklab, var(--gold) 22%, transparent);color:var(--cream);}
+  .g-badge{margin-top:1.5rem;display:flex;align-items:center;justify-content:center;gap:0.6rem;font-size:0.9375rem;font-weight:600;color:var(--ink);}
+  .g-logo{display:inline-flex;}
+  .g-logo svg{width:1.4rem;height:1.4rem;}
+  .carousel{margin-top:2rem;}
+  .g-track{display:flex;align-items:flex-start;gap:1.25rem;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:0.25rem 0.25rem 1rem;scrollbar-width:none;outline:none;}
+  .g-track::-webkit-scrollbar{display:none;}
+  .g-card{flex:0 0 86%;scroll-snap-align:start;background:#fff;border:1px solid #e6e1d8;border-radius:0.875rem;padding:1.25rem;box-shadow:0 1px 2px rgba(24,7,10,.06);}
+  @media(min-width:768px){.g-card{flex-basis:calc((100% - 1.25rem)/2);}}
+  @media(min-width:1024px){.g-card{flex-basis:calc((100% - 2.5rem)/3);}}
+  .g-top{display:flex;align-items:center;gap:0.75rem;}
+  .g-avatar{flex-shrink:0;display:flex;align-items:center;justify-content:center;width:2.5rem;height:2.5rem;border-radius:9999px;color:#fff;font-weight:600;font-size:1rem;}
+  .g-who{flex:1;min-width:0;}
+  .g-name{font-size:0.9375rem;font-weight:600;line-height:1.3;color:#202124;}
+  .g-date{font-size:0.75rem;color:#70757a;}
+  .g-stars{margin-top:0.75rem;font-size:1.05rem;letter-spacing:0.08em;line-height:1;color:#FBBC04;}
+  .g-text{margin-top:0.6rem;font-size:0.9rem;line-height:1.6;color:#3c4043;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:5;overflow:hidden;}
+  .g-card.open .g-text{-webkit-line-clamp:unset;display:block;}
+  .g-more{margin-top:0.5rem;background:none;border:0;padding:0;font:inherit;font-size:0.85rem;font-weight:600;color:var(--wine);cursor:pointer;}
+  .g-controls{display:flex;justify-content:center;gap:0.75rem;margin-top:0.5rem;}
+  .g-arrow{display:inline-flex;align-items:center;justify-content:center;width:2.5rem;height:2.5rem;border-radius:9999px;border:1px solid color-mix(in oklab, var(--brown) 35%, transparent);background:#fff;color:var(--brown);cursor:pointer;transition:all .2s;}
+  .g-arrow:hover{background:var(--wine);color:var(--cream);border-color:var(--wine);}
+  .g-arrow svg{width:1.1rem;height:1.1rem;}
+  .reviews-note a{color:var(--wine);font-weight:600;text-decoration:underline;text-underline-offset:4px;}
+
+  ::selection{background:color-mix(in oklab, var(--gold) 40%, transparent);}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header id="site-header">
+  <div class="container header-inner">
+    <a href="#top" class="brand" aria-label="Beringuel Advocacia - início">
+      <img src="assets/logo-claro.png" alt="Beringuel Advocacia" />
+    </a>
+
+    <nav class="desktop-nav">
+      <a href="#quem-somos">Quem Somos</a>
+      <a href="#solucoes">Soluções</a>
+      <a href="#terceirizar">Vantagens</a>
+      <a href="#selos">Selos</a>
+      <a href="#depoimentos">Depoimentos</a>
+      <a href="#contato">Contato</a>
+    </nav>
+
+    <div class="header-actions">
+      <a href="https://wa.me/5581983096660?text=Ol%C3%A1%2C%20gostaria%20de%20conhecer%20a%20recupera%C3%A7%C3%A3o%20de%20cr%C3%A9dito%20escolar%20da%20Beringuel%20Advocacia" target="_blank" rel="noopener noreferrer" class="btn-wa gold wa-header-btn">
+        <i data-lucide="message-circle" class="icon"></i> Fale no WhatsApp
+      </a>
+      <button class="menu-btn" id="menu-toggle" aria-label="Abrir menu">
+        <span class="menu-lines"><span></span><span></span><span></span></span>
+      </button>
+    </div>
+  </div>
+
+  <nav class="mobile-nav" id="mobile-nav">
+    <a href="#quem-somos">Quem Somos</a>
+    <a href="#solucoes">Soluções</a>
+    <a href="#terceirizar">Vantagens</a>
+    <a href="#selos">Selos</a>
+    <a href="#depoimentos">Depoimentos</a>
+    <a href="#contato">Contato</a>
+    <a href="https://wa.me/5581983096660?text=Ol%C3%A1%2C%20gostaria%20de%20conhecer%20a%20recupera%C3%A7%C3%A3o%20de%20cr%C3%A9dito%20escolar%20da%20Beringuel%20Advocacia" target="_blank" rel="noopener noreferrer" class="btn-wa gold">
+      <i data-lucide="message-circle" class="icon"></i> Fale no WhatsApp
+    </a>
+  </nav>
+</header>
+
+<main class="bg-background">
+
+  <!-- HERO -->
+  <section id="top" class="surface-wine">
+    <div class="dotted-corner" style="position:absolute;right:0;top:6rem;width:10rem;height:10rem;opacity:.3;pointer-events:none;"></div>
+    <div class="dotted-corner" style="position:absolute;bottom:2.5rem;left:0;width:7rem;height:7rem;opacity:.2;pointer-events:none;"></div>
+    <img src="assets/logo-icone.png" alt="" aria-hidden="true" class="hero-monogram" />
+    <svg aria-hidden="true" viewBox="0 0 600 200" style="position:absolute;bottom:-1.5rem;left:0;width:100%;color:color-mix(in oklab, var(--gold) 25%, transparent);pointer-events:none;" fill="none">
+      <path d="M0 160C120 60 300 200 600 40" stroke="currentColor" stroke-width="1"/>
+    </svg>
+
+    <div class="container hero-inner hero">
+      <div class="reveal"><p class="eyebrow gold">Recuperação de crédito escolar</p></div>
+      <div class="reveal" style="transition-delay:120ms">
+        <h1>Menos <span class="text-gold-gradient">inadimplência</span> na sua escola, mais fluxo de caixa e vínculo com as famílias.</h1>
+      </div>
+      <div class="reveal" style="transition-delay:220ms">
+        <p class="lead">Somos advogados especialistas em Direito Educacional e criadores do método RCI, que previne a inadimplência desde a matrícula até a cobrança.</p>
+      </div>
+      <div class="reveal" style="transition-delay:320ms">
+        <div class="hero-cta">
+          <a href="https://wa.me/5581983096660?text=Ol%C3%A1%2C%20gostaria%20de%20conhecer%20a%20recupera%C3%A7%C3%A3o%20de%20cr%C3%A9dito%20escolar%20da%20Beringuel%20Advocacia" target="_blank" rel="noopener noreferrer" class="btn-wa gold" style="padding:0.875rem 1.75rem;">
+            <i data-lucide="message-circle" class="icon"></i> Falar com um especialista
+          </a>
+          <a href="#solucoes" class="link">Conheça as soluções</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SOBRE NÓS -->
+  <section id="quem-somos" style="background-color:var(--background);">
+    <div class="container educ-grid">
+      <div class="reveal">
+        <img src="assets/educacao.jpg" alt="Equipe da Beringuel Advocacia, referência em Direito Educacional, com logos de instituições de ensino atendidas" class="educ-img shadow-elegant" />
+      </div>
+      <div class="reveal" style="transition-delay:150ms">
+        <div class="section-title">
+          <p class="eyebrow">Sobre nós</p>
+          <h2>Especialistas em Direito Educacional, com foco em recuperação de crédito escolar</h2>
+          <div class="hairline-gold rule"></div>
+        </div>
+        <div class="about-text">
+          <p>Somos uma equipe completa com advogados especialistas em Direito Educacional, com foco na recuperação de crédito escolar. Somos criadores do método RCI (Recuperação de Crédito Integrado), que implanta medidas preventivas à inadimplência desde o atendimento na matrícula ao início das cobranças, por meio de treinamentos, capacitações e implantação de processos operacionais.</p>
+          <p>Contamos também com um time de Consultores Educacionais e Coachs empresariais, prontos para atender a demanda da sua empresa de forma exclusiva e personalizada.</p>
+          <p>Temos como propósito prestar um serviço de excelência, garantindo um atendimento transparente e focado na entrega de resultados!</p>
+        </div>
+        <p class="sobre-quote">Seu crescimento é nossa missão.</p>
+        <a href="https://wa.me/5581983096660?text=Ol%C3%A1%2C%20gostaria%20de%20conhecer%20a%20recupera%C3%A7%C3%A3o%20de%20cr%C3%A9dito%20escolar%20da%20Beringuel%20Advocacia" target="_blank" rel="noopener noreferrer" class="btn-wa gold" style="margin-top:1.75rem;">
+          <i data-lucide="message-circle" class="icon"></i> Falar com a nossa equipe
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOLUÇÕES -->
+  <section id="solucoes" class="compact" style="background-color:color-mix(in oklab, var(--secondary) 60%, transparent);">
+    <div class="container">
+      <div class="reveal">
+        <div class="section-title">
+          <p class="eyebrow">Como ajudamos</p>
+          <h2>Soluções para impulsionar sua escola</h2>
+          <div class="hairline-gold rule"></div>
+        </div>
+      </div>
+      <ul class="mini-list reveal"><li><span class="n">01</span><span>Desenvolver ações preventivas para evitar a inadimplência</span></li><li><span class="n">02</span><span>Treinar, implantar a política de cobranças e aplicar uma régua de cobrança eficaz</span></li><li><span class="n">03</span><span>Diagnosticar e estabelecer políticas de pagamentos compatíveis com a proposta da instituição</span></li><li><span class="n">04</span><span>Treinar equipe de cobrança, atendimento e tesouraria</span></li><li><span class="n">05</span><span>Profissionalizar a Recuperação de Crédito e reduzir custos de cobrança</span></li><li><span class="n">06</span><span>Preparar equipe para os aspectos legais da cobrança</span></li><li><span class="n">07</span><span>Definir estratégias para cobrar, receber e fidelizar o cliente</span></li><li><span class="n">08</span><span>Todo o script de cobrança obedecerá a regras diferenciadas do mercado normal de cobrança</span></li><li><span class="n">09</span><span>Prestação de contas semanais, gerando fluxo de caixa rápido e necessário diante do cenário atual</span></li></ul>
+      <div class="reveal" style="margin-top:2rem;">
+        <a href="https://wa.me/5581983096660?text=Ol%C3%A1%2C%20gostaria%20de%20conhecer%20a%20recupera%C3%A7%C3%A3o%20de%20cr%C3%A9dito%20escolar%20da%20Beringuel%20Advocacia" target="_blank" rel="noopener noreferrer" class="btn-wa gold">
+          <i data-lucide="message-circle" class="icon"></i> Diagnosticar a inadimplência da minha escola
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- POR QUE TERCEIRIZAR -->
+  <section id="terceirizar" class="surface-wine compact">
+    <div class="container" style="position:relative;">
+      <div class="reveal">
+        <div class="section-title light">
+          <p class="eyebrow gold">Vantagens</p>
+          <h2 style="color:var(--cream);">Por que terceirizar a cobrança?</h2>
+          <div class="hairline-gold rule"></div>
+        </div>
+      </div>
+      <ul class="mini-list dark reveal"><li><span class="tk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span>Equipe especializada em negociações</span></li><li><span class="tk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span>Advogados especialistas em Direito Educacional</span></li><li><span class="tk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span>Manutenção de vínculo escola/família</span></li><li><span class="tk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span>Régua de cobrança específica para o setor educacional</span></li><li><span class="tk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span>Controle de evasão</span></li><li><span class="tk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span>Implantar profissionalismo e cultura do pagamento em dia</span></li><li><span class="tk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span>A gestão ficará exclusivamente no setor pedagógico</span></li><li><span class="tk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span>Saúde ao fluxo de caixa da instituição</span></li></ul>
+      <div class="reveal" style="margin-top:2rem;">
+        <a href="https://wa.me/5581983096660?text=Ol%C3%A1%2C%20gostaria%20de%20conhecer%20a%20recupera%C3%A7%C3%A3o%20de%20cr%C3%A9dito%20escolar%20da%20Beringuel%20Advocacia" target="_blank" rel="noopener noreferrer" class="btn-wa gold">
+          <i data-lucide="message-circle" class="icon"></i> Quero terceirizar a cobrança da minha escola
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SELOS -->
+  <section id="selos" style="background-color:var(--background);">
+    <div class="container">
+      <div class="reveal">
+        <div class="section-title" style="margin-left:auto;margin-right:auto;text-align:center;">
+          <p class="eyebrow">Reconhecimento</p>
+          <h2>Selos e Reconhecimentos do escritório</h2>
+          <div class="hairline-gold rule" style="margin-left:auto;margin-right:auto;"></div>
+        </div>
+      </div>
+      <div class="grid-2">
+        <div class="reveal">
+          <article class="info-card">
+            <div class="info-thumb"><img src="assets/OURO.png" alt="Selo de Referência Ouro da Beringuel Advocacia" loading="lazy" /></div>
+            <div class="info-body">
+              <p class="eyebrow">CERTIFICADO</p>
+              <h3>Selo de Referência Ouro</h3>
+              <p>Selo de Referência Nacional em Justiça & Advocacia, na categoria Ouro em 2021, pelos serviços prestados com excelência em todo o território nacional.</p>
+            </div>
+          </article>
+        </div>
+        <div class="reveal" style="transition-delay:140ms">
+          <article class="info-card">
+            <div class="info-thumb"><img src="assets/PRATA.png" alt="Selo de Referência Prata da Beringuel Advocacia" loading="lazy" /></div>
+            <div class="info-body">
+              <p class="eyebrow">CERTIFICADO</p>
+              <h3>Selo de Referência Prata</h3>
+              <p>Selo de Referência Nacional em Justiça & Advocacia, na categoria Prata em 2020, pelos serviços prestados com excelência em todo o território nacional.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPOIMENTOS -->
+  <section id="depoimentos" class="compact" style="background-color:color-mix(in oklab, var(--secondary) 60%, transparent);">
+    <div class="container">
+      <div class="reveal">
+        <div class="section-title" style="margin-left:auto;margin-right:auto;text-align:center;">
+          <p class="eyebrow">Depoimentos</p>
+          <h2>Veja o que dizem nossos clientes</h2>
+          <div class="hairline-gold rule" style="margin-left:auto;margin-right:auto;"></div>
+        </div>
+        <p class="g-badge"><span class="g-logo"><svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span> Avaliações de clientes no Google</p>
+      </div>
+      <div class="carousel reveal">
+        <div class="g-track" id="g-track" tabindex="0" aria-label="Avaliações de clientes no Google">
+        <article class="g-card">
+          <div class="g-top">
+            <span class="g-avatar" style="background:#8D2245">P</span>
+            <div class="g-who"><p class="g-name">Paula Melo</p><p class="g-date">4 anos atrás</p></div>
+            <span class="g-logo"><svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span>
+          </div>
+          <p class="g-stars" role="img" aria-label="5 de 5 estrelas">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+          <p class="g-text">Moro na Espanha e precisei fazer a Homologacao do meu Divorcio e Gabriela foi Muito profissional , sempre. Me deixava informada sobre Andamento do Processo , tudo saiu perfeito , Super recomendo .</p>
+          <button type="button" class="g-more" hidden>Leia mais</button>
+        </article>
+        <article class="g-card">
+          <div class="g-top">
+            <span class="g-avatar" style="background:#61381B">A</span>
+            <div class="g-who"><p class="g-name">Adilson Nunes Viana</p><p class="g-date">4 anos atrás</p></div>
+            <span class="g-logo"><svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span>
+          </div>
+          <p class="g-stars" role="img" aria-label="5 de 5 estrelas">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+          <p class="g-text">A Dra. Gabriela é muito competente e acima de tudo uma profissional com alto índice de empatia com os seus clientes.</p>
+          <button type="button" class="g-more" hidden>Leia mais</button>
+        </article>
+        <article class="g-card">
+          <div class="g-top">
+            <span class="g-avatar" style="background:#18070A">C</span>
+            <div class="g-who"><p class="g-name">Carmem Lucia da Silva Silva</p><p class="g-date">5 anos atrás</p></div>
+            <span class="g-logo"><svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span>
+          </div>
+          <p class="g-stars" role="img" aria-label="5 de 5 estrelas">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+          <p class="g-text">Muito esclarecedor ,sem deixar dúvidas</p>
+          <button type="button" class="g-more" hidden>Leia mais</button>
+        </article>
+        <article class="g-card">
+          <div class="g-top">
+            <span class="g-avatar" style="background:#8D2245">P</span>
+            <div class="g-who"><p class="g-name">Pinho Enina</p><p class="g-date">5 anos atrás</p></div>
+            <span class="g-logo"><svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span>
+          </div>
+          <p class="g-stars" role="img" aria-label="5 de 5 estrelas">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+          <p class="g-text">Uma excelente profissional, além do trabalho perfeito ela ainda mantém um contato direto com o cliente!<br>Super indico, virei cliente fiel!</p>
+          <button type="button" class="g-more" hidden>Leia mais</button>
+        </article>
+        <article class="g-card">
+          <div class="g-top">
+            <span class="g-avatar" style="background:#61381B">I</span>
+            <div class="g-who"><p class="g-name">Isany Cisneiros Muniz</p><p class="g-date">5 anos atrás</p></div>
+            <span class="g-logo"><svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span>
+          </div>
+          <p class="g-stars" role="img" aria-label="5 de 5 estrelas">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+          <p class="g-text">Profissional altamente gabaritada.<br>Respeitosa e interessada em resolver o seu problema, da melhor forma!!!<br>Escritório bem situado; preços não abusivos.<br>Bastante satisfeita com toda instrução recebida, e com o encaminhamento dado ao processo em andamento.<br>Uma profissional para não perdermos de vista!!!</p>
+          <button type="button" class="g-more" hidden>Leia mais</button>
+        </article>
+        <article class="g-card">
+          <div class="g-top">
+            <span class="g-avatar" style="background:#18070A">C</span>
+            <div class="g-who"><p class="g-name">Carlos Dantas</p><p class="g-date">5 anos atrás</p></div>
+            <span class="g-logo"><svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span>
+          </div>
+          <p class="g-stars" role="img" aria-label="5 de 5 estrelas">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+          <p class="g-text">Profissional competente, sempre atenta aos detalhes e prazos, além do atendimento acolhedor.</p>
+          <button type="button" class="g-more" hidden>Leia mais</button>
+        </article>
+        <article class="g-card">
+          <div class="g-top">
+            <span class="g-avatar" style="background:#8D2245">M</span>
+            <div class="g-who"><p class="g-name">Maria da Conceição Antao Bezerra</p><p class="g-date">5 anos atrás</p></div>
+            <span class="g-logo"><svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span>
+          </div>
+          <p class="g-stars" role="img" aria-label="5 de 5 estrelas">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+          <p class="g-text">Foi ótimo o atendimento</p>
+          <button type="button" class="g-more" hidden>Leia mais</button>
+        </article>
+        </div>
+        <div class="g-controls">
+          <button type="button" class="g-arrow" id="g-prev" aria-label="Avaliação anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+          <button type="button" class="g-arrow" id="g-next" aria-label="Próxima avaliação"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+        </div>
+        <p class="reviews-note"><a href="https://www.google.com/search?q=Beringuel+Advocacia+Olinda+avalia%C3%A7%C3%B5es" target="_blank" rel="noopener noreferrer">Ver todas as avaliações no Google</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section style="background-color:var(--background);padding:5rem 0;">
+    <div class="container">
+      <div class="reveal">
+        <div class="cta-band surface-wine">
+          <h3>Seu crescimento é nossa missão.</h3>
+          <p>Entre em contato conosco que teremos muito prazer em ter sua escola no nosso time!</p>
+          <a href="https://wa.me/5581983096660?text=Ol%C3%A1%2C%20gostaria%20de%20conhecer%20a%20recupera%C3%A7%C3%A3o%20de%20cr%C3%A9dito%20escolar%20da%20Beringuel%20Advocacia" target="_blank" rel="noopener noreferrer" class="btn-wa gold">
+            <i data-lucide="message-circle" class="icon"></i> Chamar no WhatsApp agora
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer id="contato" class="surface-wine">
+  <img src="assets/logo-icone.png" alt="" aria-hidden="true" class="footer-mono" />
+  <div class="container" style="position:relative;">
+    <div class="footer-grid">
+      <div class="reveal">
+        <div class="section-title light">
+          <p class="eyebrow gold">Contato</p>
+          <h2>Vamos conversar sobre o seu caso</h2>
+          <div class="hairline-gold rule"></div>
+          <p class="desc">Atendimento presencial em Olinda-PE e remoto para todo o Brasil.</p>
+        </div>
+        <a href="https://wa.me/5581983096660?text=Ol%C3%A1%2C%20gostaria%20de%20conhecer%20a%20recupera%C3%A7%C3%A3o%20de%20cr%C3%A9dito%20escolar%20da%20Beringuel%20Advocacia" target="_blank" rel="noopener noreferrer" class="btn-wa gold footer-cta">
+          <i data-lucide="message-circle" class="icon"></i> Chamar no WhatsApp agora
+        </a>
+
+        <div class="addr-grid">
+          <div class="addr">
+            <i data-lucide="map-pin" class="icon" style="width:1.25rem;height:1.25rem;color:var(--gold);margin-top:0.2rem;flex-shrink:0;"></i>
+            <span><strong>Empresarial JAM</strong>9º andar — Sala 913<br>Olinda — Pernambuco, Brasil</span>
+          </div>
+          <div class="map-wrap">
+            <iframe title="Mapa do Empresarial JAM em Olinda-PE" src="https://www.google.com/maps?q=Empresarial+JAM+Olinda+PE&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+
+        <div class="locale-photo">
+        </div>
+      </div>
+
+      <div class="reveal" style="transition-delay:150ms">
+        <ul class="contact-list">
+          <li><i data-lucide="map-pin" class="icon" style="width:1.25rem;height:1.25rem;color:var(--gold);flex-shrink:0;"></i><span>Atendimento presencial em Olinda e Região Metropolitana do Recife</span></li>
+          <li><i data-lucide="phone" class="icon" style="width:1.25rem;height:1.25rem;color:var(--gold);flex-shrink:0;"></i><a href="https://wa.me/5581983096660?text=Ol%C3%A1%2C%20gostaria%20de%20conhecer%20a%20recupera%C3%A7%C3%A3o%20de%20cr%C3%A9dito%20escolar%20da%20Beringuel%20Advocacia" target="_blank" rel="noopener noreferrer">(81) 98309-6660 — WhatsApp</a></li>
+          <li><i data-lucide="mail" class="icon" style="width:1.25rem;height:1.25rem;color:var(--gold);flex-shrink:0;"></i><a href="mailto:juridico@beringueladvocacia.com">juridico@beringueladvocacia.com</a></li>
+          <li><i data-lucide="instagram" class="icon" style="width:1.25rem;height:1.25rem;color:var(--gold);flex-shrink:0;"></i><a href="https://instagram.com/beringueladvocacia" target="_blank" rel="noopener noreferrer">@beringueladvocacia</a></li>
+        </ul>
+
+        <div class="negotiate-box">
+          <h4>Contato para negociações e acordos</h4>
+          <p class="note"><strong>Importante:</strong> envie nome e CPF do responsável financeiro, nome do aluno e instituição de ensino.</p>
+          <div class="lines">
+            <a href="mailto:juridico@beringueladvocacia.com"><i data-lucide="mail" class="icon" style="width:1rem;height:1rem;color:var(--gold);"></i> juridico@beringueladvocacia.com</a>
+            <a href="tel:+558198910595"><i data-lucide="phone" class="icon" style="width:1rem;height:1rem;color:var(--gold);"></i> (81) 98891-0595</a>
+            <a href="tel:+558133183534"><i data-lucide="phone" class="icon" style="width:1rem;height:1rem;color:var(--gold);"></i> (81) 3318-3534</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+  <p id="copyright"></p>
+  <p class="brand-tag">
+    Feito por 
+    <a href="https://www.instagram.com/results.ag/?utm_source=ig_web_button_share_sheet" 
+       target="_blank" 
+       rel="noopener noreferrer">
+      <span>RESULTS.AG</span>
+    </a>
+  </p>
+</div>
+</footer>
+
+<a href="https://wa.me/5581983096660?text=Ol%C3%A1%2C%20gostaria%20de%20conhecer%20a%20recupera%C3%A7%C3%A3o%20de%20cr%C3%A9dito%20escolar%20da%20Beringuel%20Advocacia" target="_blank" rel="noopener noreferrer" class="floating-wa" aria-label="Falar no WhatsApp">
+  <i data-lucide="message-circle" class="icon" style="width:1.5rem;height:1.5rem;"></i>
+  <span>WhatsApp</span>
+</a>
+
+<script>
+  // icons
+  try{ if(window.lucide) lucide.createIcons(); }catch(e){}
+
+  // copyright year
+  document.getElementById('copyright').textContent = '© ' + new Date().getFullYear() + ' Beringuel Advocacia. Todos os direitos reservados.';
+
+  // header scroll state
+  const header = document.getElementById('site-header');
+  const onScroll = () => {
+    if (window.scrollY > 24) header.classList.add('scrolled');
+    else header.classList.remove('scrolled');
+  };
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  // mobile menu
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileNav = document.getElementById('mobile-nav');
+  menuToggle.addEventListener('click', () => mobileNav.classList.toggle('open'));
+  mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileNav.classList.remove('open')));
+
+  // reveal on scroll
+  const revealEls = document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window)){ revealEls.forEach(el=>el.classList.add('is-visible')); }
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  revealEls.forEach(el => revealObserver.observe(el));
+
+  // counters
+  const counters = document.querySelectorAll('.counter');
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const el = entry.target;
+      counterObserver.unobserve(el);
+      const to = parseInt(el.dataset.to, 10);
+      const suffix = el.dataset.suffix || '';
+      const duration = 1600;
+      const start = performance.now();
+      const tick = (now) => {
+        const progress = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        el.textContent = Math.round(to * eased) + suffix;
+        if (progress < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    });
+  }, { threshold: 0.4 });
+  counters.forEach(el => counterObserver.observe(el));
+
+  // FAQ accordion
+  document.querySelectorAll('.accordion-item').forEach(item => {
+    const trigger = item.querySelector('.accordion-trigger');
+    const content = item.querySelector('.accordion-content');
+    trigger.addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.accordion-item.open').forEach(other => {
+        if (other !== item) {
+          other.classList.remove('open');
+          other.querySelector('.accordion-content').style.maxHeight = null;
+        }
+      });
+      if (isOpen) {
+        item.classList.remove('open');
+        content.style.maxHeight = null;
+      } else {
+        item.classList.add('open');
+        content.style.maxHeight = content.scrollHeight + 'px';
+      }
+    });
+  });
+
+  // google reviews carousel
+  (function(){
+    const track = document.getElementById('g-track');
+    if(!track) return;
+    const cards = Array.from(track.children);
+    const gap = () => parseFloat(getComputedStyle(track).columnGap) || 20;
+    const step = () => cards[0].getBoundingClientRect().width + gap();
+    const atEnd = () => track.scrollLeft + track.clientWidth >= track.scrollWidth - 6;
+    const next = () => atEnd() ? track.scrollTo({left:0}) : track.scrollBy({left:step()});
+    const prev = () => track.scrollLeft <= 6 ? track.scrollTo({left:track.scrollWidth}) : track.scrollBy({left:-step()});
+    document.getElementById('g-next').addEventListener('click', () => { next(); restart(); });
+    document.getElementById('g-prev').addEventListener('click', () => { prev(); restart(); });
+
+    // "Leia mais" only where the text is actually cut
+    cards.forEach(card => {
+      const txt = card.querySelector('.g-text'), btn = card.querySelector('.g-more');
+      if(txt.scrollHeight > txt.clientHeight + 2){
+        btn.hidden = false;
+        btn.addEventListener('click', () => {
+          const open = card.classList.toggle('open');
+          btn.textContent = open ? 'Mostrar menos' : 'Leia mais';
+        });
+      }
+    });
+
+    // auto-rotate sideways, pauses on hover/touch/focus
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let timer = null;
+    const stop = () => { clearInterval(timer); timer = null; };
+    const start = () => { if(reduce || timer) return; timer = setInterval(next, 4500); };
+    const restart = () => { stop(); start(); };
+    ['mouseenter','touchstart','focusin'].forEach(e => track.addEventListener(e, stop, {passive:true}));
+    ['mouseleave','touchend','focusout'].forEach(e => track.addEventListener(e, start, {passive:true}));
+    start();
+  })();
+</script>
+</body>
+</html>
